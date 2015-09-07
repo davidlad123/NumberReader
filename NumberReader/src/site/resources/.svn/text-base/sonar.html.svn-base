@@ -1,0 +1,977 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="gwt:property" content="locale=en_US">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<title>Sonar - Number Reader</title>
+<link href="sonar_files/sonar.css" media="all" rel="stylesheet" type="text/css"><script src="sonar_files/sonar.js" type="text/javascript"></script>
+<!--[if lte IE 8]><script src="/javascripts/protovis-msie.js?1342043351" type="text/javascript"></script><![endif]-->
+<link rel="shortcut icon" type="image/x-icon" href="http://192.168.1.5:9010/images/favicon.ico?1342043351">
+
+<link rel="alternate" title="Sonar Alerts on Number Reader" href="http://192.168.1.5:9010/feeds/project/NumberReader:NumberReader?category=Alert" type="application/atom+xml">
+<script>var baseUrl = '';</script>
+</head><body>
+
+
+
+<div id="container">
+<div id="hd">
+<ol id="crumbs">
+<li><a href="http://192.168.1.5:9010/">Home</a></li>
+
+<li>
+<img alt="" src="sonar_files/TRK.png" title="" height="16" width="16">&nbsp;
+<a href="http://192.168.1.5:9010/dashboard/index/NumberReader:NumberReader?did=1">Number Reader</a>
+&nbsp;
+<a href="http://192.168.1.5:9010/dashboard/index/NumberReader:NumberReader?did=1" title="Permalink"><img alt="Permalink" src="sonar_files/permalink.gif"></a>
+</li>
+
+</ol>
+
+<ol id="nav">
+<li>
+<input size="15" name="search" id="searchInput" onfocus="autocompleteResources()" value="Search" type="text">
+<img src="sonar_files/loading-small.gif" id="searchingResources" style="display: none;">
+</li>
+<li>
+<a href="javascript:window.print()"><img src="sonar_files/print.gif" alt="Print" title="Print"></a>
+</li>
+
+<li><a href="http://192.168.1.5:9010/sessions/new?return_to=%2Fdashboard%2Findex%2F1%3Fdid%3D1">Log in</a></li>
+
+<li><a href="http://192.168.1.5:9010/profiles">Configuration</a></li>
+</ol>
+</div>
+<div id="body">
+<div id="searchResourcesResults" class="autocomplete" style="display:none"></div>
+<div id="sb">
+<div id="sidebar">
+<ul>
+
+
+<li class="selected">
+<a href="http://192.168.1.5:9010/dashboard/index/1?did=1">Dashboard</a>
+</li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/dashboard/index/1?did=5">Hotspots</a>
+</li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/dashboard/index/1?did=6">Reviews</a>
+</li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/dashboard/index/1?did=7">Time Machine</a>
+</li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/components/index/1">Components</a></li>
+<li class="">
+<a href="http://192.168.1.5:9010/drilldown/violations/1">Violations Drilldown</a></li>
+<li class="">
+<a href="http://192.168.1.5:9010/cloud/index/1">Clouds</a></li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/plugins/resource/1?page=org.sonar.plugins.design.ui.page.DesignPage">Design</a>
+</li>
+
+<li class="">
+<a href="http://192.168.1.5:9010/plugins/resource/1?page=org.sonar.plugins.design.ui.libraries.LibrariesPage">Libraries</a>
+</li>
+
+
+
+</ul>
+<div id="logo">
+<center><a href="http://www.sonarsource.org/" target="SonarSource"><img alt="Embrace Quality" class="png" src="sonar_files/sonar.png" title="Embrace Quality"></a></center>
+</div>
+</div>
+
+<div id="sidebarconf" class="hidden"></div>
+
+</div>
+<div id="content" class="with_sidebar">
+
+<div class="print"><h2>Number Reader</h2></div>
+
+<div class="error" id="error" style="display:none">
+<span id="errormsg"></span> &nbsp;&nbsp;[<a href="#" onclick="javascript:$('error').hide();return false;">hide</a>]
+</div>
+<div class="notice" id="info" style="display:none">
+<span id="infomsg"></span> &nbsp;&nbsp;[<a href="#" onclick="javascript:$('info').hide();return false;">hide</a>]
+</div>
+<div class="warning" id="warning" style="display:none">
+<span id="warningmsg"></span> &nbsp;&nbsp;[<a href="#" onclick="javascript:$('warning').hide();return false;">hide</a>]
+</div>
+<div id="dashboard">
+<div class="line-block">
+
+
+<div id="snapshot_title" class="page_title">
+<h4>
+ Version 0.0.1 - 15 Jul 2012 00:27
+<form method="GET" action="/dashboard/index/1" style="display: inline" class="spacer-left">
+<input name="did" value="1" type="hidden">
+<select id="select-comparison" name="period" onchange="submit()" class="small">
+<option selected="selected" value="">Time changes...</option>
+<option value="1">Δ since previous analysis (2012 Jul 13)</option><option value="2">Δ over 5 days</option><option value="3">Δ over 30 days</option></select>
+</form>
+
+</h4>
+</div>
+
+</div>
+
+<div style="width: 100%;display: block; float: none">
+
+<!-- the right margin with 1px is a trick for IE. See SONAR-2637 -->
+<div class="dashboard-column-wrapper" style="width: 50%;margin: 0 -1px 0 0;">
+<div class="dashboard-column" id="dashboard-column-1" style="margin: 0 5px 0 0px;">
+
+
+
+
+<div class="block" id="block_22">
+
+<div class="total-quality" style="height:100%;">
+
+
+<div class="widget">
+            
+            <div class="yui-g">
+              <div class="yui-u first">
+                <div class="dashbox">
+                  <p class="title">Total Quality</p>
+                  <p><span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=total-quality" class="" rel="" title=""><span id="m_total-quality">99.0%</span></a><img alt="1-green-small" src="sonar_files/1-green-small.png"></span></p> 
+                </div>
+              </div>
+              <div class="yui-u">
+                <div class="dashbox">
+                    <p class="title">&nbsp;</p>
+                    <p><span><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=total-quality-architecture" class="" rel="" title=""><span id="m_total-quality-architecture">100.0%</span> Architecture</a><img alt="2-green-small" src="sonar_files/2-green-small.png"></span></p>
+                    <p><span><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=total-quality-design" class="" rel="" title=""><span id="m_total-quality-design">98.3%</span> Design</a><img alt="1-green-small" src="sonar_files/1-green-small.png"></span></p>
+                    <p><span><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=total-quality-test" class="" rel="" title=""><span id="m_total-quality-test">97.8%</span> Test</a></span></p>
+                    <p><span><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=total-quality-code" class="" rel="" title=""><span id="m_total-quality-code">100.0%</span> Code</a></span></p>
+                </div>
+              </div>
+            </div>
+            
+
+
+
+
+
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_4">
+
+<div class="code_coverage" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" width="50%">
+<div class="dashbox">
+<p class="title">Code coverage</p>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=coverage" class="" rel="" title=""><span id="m_coverage">97.2%</span></a></span>
+</p>
+
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?highlight=line_coverage&amp;metric=uncovered_lines" class="" rel="" title=""><span id="m_line_coverage">97.7%</span> line coverage</a>
+</p>
+
+
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?highlight=branch_coverage&amp;metric=uncovered_conditions" class="" rel="" title=""><span id="m_branch_coverage">95.6%</span> branch coverage</a>
+</p>
+
+
+</div>
+</td>
+<td nowrap="nowrap" valign="top" width="50%">
+
+<div class="dashbox">
+<h3>Unit test success</h3>
+<p><span class="big">
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=test_success_density" class="" rel="" title=""><span id="m_test_success_density">100.0%</span></a></span>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=test_failures" class="" rel="" title=""><span id="m_test_failures">0</span> failures</a>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=test_errors" class="" rel="" title=""><span id="m_test_errors">0</span> errors</a>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=tests" class="" rel="" title=""><span id="m_tests">38</span> tests</a>
+<img alt="1-black-small" src="sonar_files/1-black-small.png"></p>
+
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=test_execution_time" class="" rel="" title=""><span id="m_test_execution_time">163 ms</span></a>
+<img alt="2-black-small" src="sonar_files/2-black-small.png"></p>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_30">
+
+<div class="complexity" style="height:100%;">
+
+
+<div class="widget">
+
+<table class="width100">
+<tbody>
+<tr>
+<td valign="top" width="50%">
+<div class="dashbox">
+<h3>Complexity</h3>
+
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=function_complexity" class="" rel="" title=""><span id="m_function_complexity">2.2</span></a></span> /method</p>
+
+
+
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=class_complexity" class="" rel="" title=""><span id="m_class_complexity">8.6</span></a></span> /class<img alt="-1-green-small" src="sonar_files/-1-green-small.png"></p>
+
+
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=file_complexity" class="" rel="" title=""><span id="m_file_complexity">8.6</span></a></span> /file<img alt="-1-green-small" src="sonar_files/-1-green-small.png"></p>
+
+
+<p>
+Total: <a href="http://192.168.1.5:9010/drilldown/measures/1?metric=complexity" class="" rel="" title=""><span id="m_complexity">112</span></a> <img alt="-2-black-small" src="sonar_files/-2-black-small.png"></p>
+
+</div>
+</td>
+<td nowrap="nowrap" valign="top" width="50%">
+
+<div class="dashbox" id="cmp_charts">
+<script type="text/javascript">
+//<![CDATA[
+function selectComplexity(metric) {
+$$('#cmp_charts .chart').each(function(chart) {
+chart.hide();
+});
+$('chart_' + metric).show();
+}
+</script>
+<style>
+#cmp_charts form {
+font-size: 93%;padding-left: 30px;
+}
+#cmp_charts form label {
+padding-right: 5px;
+}
+</style>
+
+
+<div id="chart_function_complexity_distribution" class="chart" style="display: block">
+<img alt="Methods distribution /complexity" id="chart_img_function_complexity_distribution" src="sonar_files/chart_002.png" title="Methods distribution /complexity"><script type="text/javascript">
+//<![CDATA[
+new Tip('chart_img_function_complexity_distribution', '<div style="width:300px;"><b>Methods distribution /complexity</b><br>'+
+'<img alt="Methods distribution /complexity" id="chart_img_function_complexity_distribution" src="/chart?ck=distbar&amp;c=777777&amp;v=1%3D27%3B2%3D16%3B4%3D6%3B6%3D3%3B8%3D0%3B10%3D0%3B12%3D0&amp;w=300&amp;h=150&amp;fs=12&amp;bgc=CAE3F2" title="Methods distribution /complexity" /></div>');
+//]]>
+</script>
+</div>
+
+
+
+
+<div id="chart_file_complexity_distribution" class="chart" style="display: none">
+<img alt="Files distribution /complexity" id="chart_img_file_complexity_distribution" src="sonar_files/chart_003.png" title="Files distribution /complexity"><script type="text/javascript">
+//<![CDATA[
+new Tip('chart_img_file_complexity_distribution', '<div style="width:300px;"><b>Files distribution /complexity</b><br>'+
+'<img alt="Files distribution /complexity" id="chart_img_file_complexity_distribution" src="/chart?ck=distbar&amp;c=777777&amp;v=0%3D7%3B5%3D1%3B10%3D3%3B20%3D2%3B30%3D0%3B60%3D0%3B90%3D0&amp;w=300&amp;h=150&amp;fs=12&amp;bgc=CAE3F2" title="Files distribution /complexity" /></div>');
+//]]>
+</script>
+</div>
+
+
+
+<form>
+
+<input name="cmp_dist" value="function_complexity_distribution" id="cmp_dist_function_complexity_distribution" onclick="selectComplexity('function_complexity_distribution');" checked="checked" type="radio"> <label for="cmp_dist_function_complexity_distribution">Methods</label>
+
+<input name="cmp_dist" value="file_complexity_distribution" id="cmp_dist_file_complexity_distribution" onclick="selectComplexity('file_complexity_distribution');" type="radio"> <label for="cmp_dist_file_complexity_distribution">Files</label>
+
+</form>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+<div class="clear"></div>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_73">
+
+<div class="ckjm" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody>
+<tr>
+
+<td valign="top" width="50%">
+<div class="dashbox">
+<h3>LCOM4</h3>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=lcom4" class="" rel="" title=""><span id="m_lcom4">1.0</span></a></span> /class </p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=lcom4" class="" rel="" title=""><span id="m_suspect_lcom4_density">0.0%</span> files having LCOM4&gt;1</a> </p>
+</div>
+</td>
+
+
+<td valign="top" width="50%">
+<div class="dashbox">
+<h3>Response for Class</h3>
+<p><span class="big">
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=rfc" class="" rel="" title=""><span id="m_rfc">12</span></a></span> /class </p>
+</div>
+</td>
+
+</tr>
+<tr>
+<td>
+
+</td>
+<td>
+
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=rfc"><img alt="" id="rfc_distribution" src="sonar_files/chart.png" title=""></a>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_67">
+
+<div class="useless-code-tracker" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <div class="dashbox">
+          <p class="title">Useless Code</p>
+          <p><span class="big"><span id="m_total-useless-lines">0</span></span></p>
+          <p>0 duplicated</p>
+          <p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=dead-code" class="" rel="" title=""><span id="m_dead-code">0</span> lines in unused private methods</a></p>
+          <p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=potential-dead-code" class="" rel="" title=""><span id="m_potential-dead-code">0</span> lines in unused protected methods</a></p>
+        </div>
+      </td>
+      <td valign="top">
+        <div class="dashbox">
+          <p class="title"></p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_33">
+
+<div class="size" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" width="48%">
+<div class="dashbox">
+
+<h3>Lines of code</h3>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=ncloc" class="" rel="" title=""><span id="m_ncloc">529</span></a></span>
+<img alt="-1-black-small" src="sonar_files/-1-black-small.png"></p>
+
+<p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=lines" class="" rel="" title=""><span id="m_lines">1,984</span> lines</a> <img alt="2-black-small" src="sonar_files/2-black-small.png"></p>
+
+
+
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=statements" class="" rel="" title=""><span id="m_statements">223</span> statements</a> <img alt="2-black-small" src="sonar_files/2-black-small.png"></p>
+
+
+<p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=files" class="" rel="" title=""><span id="m_files">13</span> files</a> <img alt="1-black-small" src="sonar_files/1-black-small.png"></p>
+
+
+</div>
+</td>
+<td width="10"> </td>
+<td valign="top">
+<div class="dashbox">
+
+<h3>Classes</h3>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=classes" class="" rel="" title=""><span id="m_classes">13</span></a></span>
+<img alt="1-black-small" src="sonar_files/1-black-small.png"></p>
+<p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=packages" class="" rel="" title=""><span id="m_packages">6</span> packages</a> </p>
+
+<p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=functions" class="" rel="" title=""><span id="m_functions">52</span> methods</a> <img alt="1-black-small" src="sonar_files/1-black-small.png"></p>
+
+<p><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=accessors" class="" rel="" title=""><span id="m_accessors">4</span> accessors</a> </p>
+
+
+</div>
+</td>
+</tr>
+</tbody></table>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+<!-- the right margin with 1px is a trick for IE. See SONAR-2637 -->
+<div class="dashboard-column-wrapper" style="width: 50%;margin: 0 -1px 0 0;">
+<div class="dashboard-column" id="dashboard-column-2" style="margin: 0 0px 0 5px;">
+
+
+
+
+<div class="block" id="block_21">
+
+<div class="rules" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody><tr>
+<td valign="top">
+<div class="dashbox">
+<h3>Violations</h3>
+<div class="marginbottom10">
+<span class="big">
+<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader" class="" rel="" title=""><span id="m_violations">0</span></a></span>
+
+</div>
+
+<h3>Rules compliance</h3>
+<div>
+<span class="big">
+<a href="http://192.168.1.5:9010/drilldown/measures/1?highlight=weighted_violations&amp;metric=weighted_violations" class="" rel="" title=""><span id="m_violations_density">100.0%</span></a></span>
+</div>
+
+</div>
+</td>
+<td nowrap="nowrap" valign="top">
+
+<table class="clear width100">
+<tbody><tr>
+<td><img alt="Blocker" src="sonar_files/BLOCKER.png"></td>
+<td> &nbsp;<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader?severity=BLOCKER">Blocker</a></td>
+<td style="padding: 0px 10px;" align="right">
+<span id="m_blocker_violations">0</span></td>
+<td>
+<img alt="" src="sonar_files/transparent.gif" title="" width="16"></td>
+<td style="padding-bottom: 2px; padding-top: 2px;" align="left">
+
+</td>
+</tr>
+<tr>
+<td><img alt="Critical" src="sonar_files/CRITICAL.png"></td>
+<td> &nbsp;<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader?severity=CRITICAL">Critical</a></td>
+<td style="padding: 0px 10px;" align="right">
+<span id="m_critical_violations">0</span></td>
+<td>
+<img alt="" src="sonar_files/transparent.gif" title="" width="16"></td>
+<td style="padding-bottom: 2px; padding-top: 2px;" align="left">
+
+</td>
+</tr>
+<tr>
+<td><img alt="Major" src="sonar_files/MAJOR.png"></td>
+<td> &nbsp;<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader?severity=MAJOR">Major</a></td>
+<td style="padding: 0px 10px;" align="right">
+<span id="m_major_violations">0</span></td>
+<td>
+<img alt="" src="sonar_files/transparent.gif" title="" width="16"></td>
+<td style="padding-bottom: 2px; padding-top: 2px;" align="left">
+
+</td>
+</tr>
+<tr>
+<td><img alt="Minor" src="sonar_files/MINOR.png"></td>
+<td> &nbsp;<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader?severity=MINOR">Minor</a></td>
+<td style="padding: 0px 10px;" align="right">
+<span id="m_minor_violations">0</span></td>
+<td>
+<img alt="" src="sonar_files/transparent.gif" title="" width="16"></td>
+<td style="padding-bottom: 2px; padding-top: 2px;" align="left">
+
+</td>
+</tr>
+<tr>
+<td><img alt="Info" src="sonar_files/INFO.png"></td>
+<td> &nbsp;<a href="http://192.168.1.5:9010/drilldown/violations/NumberReader:NumberReader?severity=INFO">Info</a></td>
+<td style="padding: 0px 10px;" align="right">
+<span id="m_info_violations">0</span></td>
+<td>
+<img alt="" src="sonar_files/transparent.gif" title="" width="16"></td>
+<td style="padding-bottom: 2px; padding-top: 2px;" align="left">
+
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_65">
+
+<div class="quality-index" style="height:100%;">
+
+
+<div class="widget">
+
+<style>
+table.qidata {
+	
+}
+table.qidata td {
+	padding: 0 5px 0 0;
+}
+</style>
+<div class="yui-gc">
+  <div class="yui-u first">
+    <div class="dashbox">
+      <h3>Quality Index</h3>
+      <p><span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-quality-index" class="" rel="" title=""><span id="m_qi-quality-index">9.8</span></a></span></p>
+      <table class="qidata">
+        <tbody><tr>
+          <td>Coding</td>
+          <td>
+	         <b><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-coding-violations" class="" rel="" title=""><span id="m_qi-coding-violations">0.0</span></a></b> /4.5	     </td>
+          <td><a style="display: block; width: 80px; height: 0.9em; border: 0px none; float: left; margin: 3px 5px; padding: 0px; background-color: rgb(0, 223, 0);" href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-coding-violations"><div style="width: 0.0%; height: 0.9em; background-color: #DF0000"></div></a></td>
+        </tr>
+        <tr>
+          <td>Complexity</td><td><b><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-complexity" class="" rel="" title=""><span id="m_qi-complexity">0.1</span></a></b> /2.0</td>
+          <td><a style="display: block; width: 35.5556px; height: 0.9em; border: 0px none; float: left; margin: 3px 5px; padding: 0px; background-color: rgb(0, 223, 0);" href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-complexity"><div style="width: 5.0%; height: 0.9em; background-color: #DF0000"></div></a></td>
+        </tr>
+        <tr>
+          <td>Coverage</td><td><b><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-test-coverage" class="" rel="" title=""><span id="m_qi-test-coverage">0.1</span></a></b> /2.0</td>
+          <td><a style="display: block; width: 35.5556px; height: 0.9em; border: 0px none; float: left; margin: 3px 5px; padding: 0px; background-color: rgb(0, 223, 0);" href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-test-coverage"><div style="width: 5.0%; height: 0.9em; background-color: #DF0000"></div></a></td>
+        </tr>
+        <tr>
+          <td>Style</td><td><b><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-style-violations" class="" rel="" title=""><span id="m_qi-style-violations">0.0</span></a></b> /1.5</td>
+          <td><a style="display: block; width: 26.6667px; height: 0.9em; border: 0px none; float: left; margin: 3px 5px; padding: 0px; background-color: rgb(0, 223, 0);" href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-style-violations"><div style="width: 0.0%; height: 0.9em; background-color: #DF0000"></div></a></td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="yui-u">
+    <div class="dashbox">
+      <h3>Complexity factor</h3>
+      <p><span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-complexity-factor" class="" rel="" title=""><span id="m_qi-complexity-factor">0.0%</span></a></span></p>
+      <p><span><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=qi-complexity-factor-methods" class="" rel="" title=""><span id="m_qi-complexity-factor-methods">0</span> methods</a></span></p>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_64">
+
+<div class="securityRules" style="height:100%;">
+
+
+<div class="widget">
+
+<div>
+  <div class="dashbox">
+    <h3>Security violations</h3>
+    <p>
+      <span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=security-violations" class="" rel="" title=""><span id="m_security-violations">0</span></a></span>
+          </p>
+    <p>
+      <span"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=security-rci" class="" rel="" title=""><span id="m_security-rci">100.0%</span> compliance</a>
+          </span"></p>
+    <div class="note small">16/17  rules activated</div>
+  </div>
+  <div class="dashbox">
+      </div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_75">
+
+<div class="comments_duplications" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" width="50%">
+
+<div class="dashbox">
+<h3>Comments</h3>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=comment_lines_density" class="" rel="" title=""><span id="m_comment_lines_density">50.7%</span></a></span>
+<img alt="2-green-small" src="sonar_files/2-green-small.png"></p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=comment_lines" class="" rel="" title=""><span id="m_comment_lines">543</span> lines</a>
+<img alt="2-black-small" src="sonar_files/2-black-small.png"></p>
+
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?highlight=public_documented_api_density&amp;metric=public_undocumented_api" class="" rel="" title=""><span id="m_public_documented_api_density">100.0%</span> docu. API</a>
+<img alt="2-green-small" src="sonar_files/2-green-small.png"></p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=public_undocumented_api" class="" rel="" title=""><span id="m_public_undocumented_api">0</span> undocu. API</a>
+</p>
+<p>
+
+</p>
+</div>
+
+</td>
+<td nowrap="nowrap" valign="top" width="50%">
+
+<div class="dashbox">
+<h3>Duplications</h3>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?highlight=duplicated_lines_density&amp;metric=duplicated_lines" class="" rel="" title=""><span id="m_duplicated_lines_density">0.0%</span></a></span>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=duplicated_lines" class="" rel="" title=""><span id="m_duplicated_lines">0</span> lines</a>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=duplicated_blocks" class="" rel="" title=""><span id="m_duplicated_blocks">0</span> blocks</a>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=duplicated_files" class="" rel="" title=""><span id="m_duplicated_files">0</span> files</a>
+</p>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_31">
+
+<div class="package_design" style="height:100%;">
+
+
+<div class="widget">
+
+<table width="100%">
+<tbody>
+<tr>
+
+<td valign="top" width="50%">
+<div class="dashbox">
+<p class="title">Package tangle index</p>
+<p>
+<span class="big"><a href="http://192.168.1.5:9010/drilldown/measures/1?metric=package_tangle_index" class="" rel="" title=""><span id="m_package_tangle_index">0.0%</span></a></span> </p>
+
+<p>
+&gt; <a href="http://192.168.1.5:9010/drilldown/measures/1?metric=package_cycles" class="" rel="" title=""><span id="m_package_cycles">0</span> cycles</a> </p>
+
+</div>
+</td>
+<td valign="top" width="50%">
+
+<div class="dashbox">
+<p class="title">Dependencies to cut</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=package_feedback_edges" class="" rel="" title=""><span id="m_package_feedback_edges">0</span> between packages</a>
+</p>
+<p>
+<a href="http://192.168.1.5:9010/drilldown/measures/1?metric=package_tangles" class="" rel="" title=""><span id="m_package_tangles">0</span> between files</a>
+</p>
+</div>
+
+</td>
+
+</tr>
+</tbody>
+</table>
+
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_66">
+
+<div class="pdf-report-widget" style="height:100%;">
+
+
+<div class="widget">
+
+<div class="yui-g">
+    <div class="dashbox">
+        <h3>PDF Report</h3>
+        <h4>Get quality info in a pdf document</h4>
+        <a href="http://192.168.1.5:9010/api/plugins/Pdfreport/getReport?resource=1">Download</a>
+    </div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="block" id="block_6">
+
+<div class="description" style="height:100%;">
+
+
+<div class="widget box">
+
+<p class="marginbottom10">Number Reader Conversion From Numeric To Verbal Language</p>
+
+<table class="width100 marginbottom10">
+<tbody>
+<tr>
+<td width="25%">Key: </td>
+<td id="resource_key" width="75%">NumberReader:NumberReader</td>
+</tr>
+
+<tr>
+<td>Language: </td>
+<td id="resource_language">java</td>
+</tr>
+
+
+<tr>
+<td>Profile:</td>
+<td><span id="resource_profile"><a href="http://192.168.1.5:9010/rules_configuration/index/13" id="profile_link">Sonar way with Findbugs</a></span> (version <span id="m_profile_version">1</span>)</td>
+</tr>
+
+
+<tr>
+<td>Alerts: </td>
+<td><img alt="Rss-12x12" src="sonar_files/rss-12x12.png"> <a href="http://192.168.1.5:9010/feeds/project/NumberReader:NumberReader?category=Alert" class="action">RSS Feed</a></td>
+</tr>
+
+
+<tr>
+<td valign="top">Links: </td>
+<td id="resource_links">
+
+<div>
+
+<a href="http://192.168.1.5:8080/" class="nolink" onclick="window.open(this.href);return false;"><img alt="Continuous integration" src="sonar_files/ci.png" title="Continuous integration"></a><a href="http://192.168.1.5:8080/" onclick="window.open(this.href);return false;">Continuous integration</a>
+</div>
+
+<div>
+
+<a href="http://192.168.1.5/workspace/NumberReader" class="nolink" onclick="window.open(this.href);return false;"><img alt="Home" src="sonar_files/homepage.png" title="Home"></a><a href="http://192.168.1.5/workspace/NumberReader" onclick="window.open(this.href);return false;">Home</a>
+</div>
+
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+</div>
+<div style="clear: both;"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+
+
+<div></div>
+
+
+<div id="ftlinks">
+Powered by <a href="http://www.sonarsource.com/" target="SonarSource" class="external">SonarSource</a> - Open Source
+<a href="http://www.sonarsource.org/documentation/license/" target="license" class="external">LGPL</a> - v.3.1.1 -
+<a href="http://sonar-plugins.codehaus.org/" class="external" target="plugins">Plugins</a> -
+<a href="http://sonar.codehaus.org/documentation" class="external" target="sonar_doc">Documentation</a> -
+<a href="http://sonar.codehaus.org/support/" target="support" class="external">Ask a question</a>
+
+<!--[if lte IE 6]><br/><span class="ie6-warn">Your web browser is outdated. This website may not display correctly.</span><![endif]-->
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+Event.observe(window, 'load', function(){
+$$('.tipable').each(function(element){
+title = element.readAttribute('title');
+if(!element.rel.blank()) {
+if(title ==null) {
+new Tip(element, element.rel);
+} else {
+new Tip(element, element.rel, {title: title});
+}
+} else if (title!=null && !title.blank()) {
+new Tip(element, title);
+}
+});
+});
+
+
+
+</script>
+
+
+</body></html>

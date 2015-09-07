@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/201/NumberReader/trunk/src/test/java/com/zphinx/reader/english
+END
+NumberReaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/201/NumberReader/trunk/src/test/java/com/zphinx/reader/english/NumberReaderTest.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196/NumberReader/trunk/src/test/java/com/zphinx/reader/english/package.html
+END
+CORTranslatorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/214/NumberReader/trunk/src/test/java/com/zphinx/reader/english/CORTranslatorTest.java
+END
+PrimaryNumberBuilderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/196/NumberReader/trunk/src/test/java/com/zphinx/reader/english/PrimaryNumberBuilderTest.java
+END

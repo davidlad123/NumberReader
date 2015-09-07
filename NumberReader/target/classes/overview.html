@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+
+
+  Copyright 2010 Zphinx Software Solutions, London
+  UK  All Rights Reserved.
+
+  This software is the confidential and proprietary information of Zphinx Software Solutions.
+  ("Confidential Information").  You shall not
+  disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into
+  with Zphinx.
+
+  Copyright Version 0.1
+
+-->
+</head>
+<body bgcolor="white">
+<p>The Number reader classes provide an implementation for generating the english language word
+representation of numbers from 0-10E63.</p>
+<p>The classes have been developed for extensibility and reuse and provide 1 main class (BaseNumberReader) which uses
+an adaptor called a Translator.The Translator is an interface which provides base signatures for classes wishing to translate
+numbers to their string equivalent.</p>
+<p>A default Translator is provided with the package which uses the chain of responsibility design pattern
+to derive which magnitude of number it is parsing and provides additional methods via an adaptee which uses the builder design pattern to
+provide string values for various numerical indexes.
+</p>
+<p>This builder parses what we call primary numbers.i.e 1-999(These numbers consistently appear as subsets of big numbers e.g billion!)</p>
+<p>The implementation is presently supported by 2 enum classes,java properties file and a default Exception.</p>
+
+ 
+
+
+<!-- Put @see and @since tags down here. -->
+
+</body>
+</html>

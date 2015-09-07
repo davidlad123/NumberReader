@@ -1,0 +1,47 @@
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+
+
+  <bannerLeft>
+    <name>Number Reader</name>
+   
+  </bannerLeft>
+ 
+  <body>
+    <links>
+      <item name="Sonar" href="http://sonarsource.org/"/>
+      <item name="Maven 3" href="http://maven.apache.org/"/>
+      <item name="Junit" href="http://www.junit.org/" />
+
+    </links>
+
+
+
+<menu name="Overview">
+
+      <item name="Description" href="index.html#desc"/>
+      <item name="Problem" href="index.html#prob"/>
+      <item name="Copyrights" href="index.html#copy"/>
+
+    </menu>
+
+<menu name="Reports">
+
+	<item name="Quality Reports" href="sonar.html" />
+	<item name="Test Results" href="test-results.txt" />
+	<item name="Javadoc" href="apidocs/index.html"/>
+	<item name="Class Diagram" href="images/number_reader.jpg" />
+	<item name="Quality Summary" href="NumberReader.pdf" />
+</menu>
+
+<menu name="Download">
+	<item name="Binary Archive" href="NumberReader-0.0.1.jar" />
+	<item name="Sorces Archive" href="NumberReader-0.0.1-sources.zip" />
+</menu>
+
+    
+  </body>
+</project>
+

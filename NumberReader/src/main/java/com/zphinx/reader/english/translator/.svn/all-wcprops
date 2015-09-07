@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/203/NumberReader/trunk/src/main/java/com/zphinx/reader/english/translator
+END
+AbstractNumberReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/219/NumberReader/trunk/src/main/java/com/zphinx/reader/english/translator/AbstractNumberReader.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/202/NumberReader/trunk/src/main/java/com/zphinx/reader/english/translator/package.html
+END
+TranslatorConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/219/NumberReader/trunk/src/main/java/com/zphinx/reader/english/translator/TranslatorConstants.java
+END
+NumberFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/220/NumberReader/trunk/src/main/java/com/zphinx/reader/english/translator/NumberFilter.java
+END

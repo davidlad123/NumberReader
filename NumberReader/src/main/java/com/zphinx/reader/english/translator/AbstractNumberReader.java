@@ -1,0 +1,178 @@
+/**
+ * @author David Ladapo (davidl@zphinx.com)
+ * @version  1.0
+ * 
+ * Copyright &copy;Zphinx Software Solutions
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  License for more details.
+ *
+ * THERE IS NO WARRANTY FOR THIS SOFTWARE, TO THE EXTENT PERMITTED BY
+ * APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING BY ZPHINX SOFTWARE SOLUTIONS 
+ * AND/OR OTHER PARTIES WHO PROVIDE THIS SOFTWARE "AS IS" WITHOUT WARRANTY
+ * OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+ * IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ * ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+ *
+ * IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+ * WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+ * THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+ * GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+ * USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+ * DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+ * PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+ * EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGES.
+ *
+ * For further information, please go to http://www.zphinx.co.uk/
+ */
+package com.zphinx.reader.english.translator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.zphinx.reader.core.NumberBuilder;
+import com.zphinx.reader.core.Translator;
+import com.zphinx.reader.exception.NumberReaderException;
+
+/**
+ * This class represent the base class which contains generic methods used by
+ * the number reader system to parse numbers.
+ * 
+ * @author David Ladapo
+ * @version $Id: AbstractNumberReader.java 219 2012-07-13 22:03:40Z rogue $
+ * 
+ *          <p>
+ *          Created: Dec 15, 2010 6:50:57 PM<br>
+ *          Copyright &copy;Zphinx Software Solutions
+ *          </p>
+ * 
+ */
+public abstract class AbstractNumberReader<T extends Translator<? extends NumberBuilder>> {
+	/**
+	 * The translator used by this class
+	 */
+	private final transient T translator;
+
+	/**
+	 * A Constructor which accepts a different translator.
+	 * 
+	 * @param translator
+	 *            The translator to be used by this class
+	 */
+	public AbstractNumberReader(final T translator) {
+		super();
+		this.translator = translator;
+	}
+
+	/**
+	 * Takes the input String and separates it into groups of 3 or less strings
+	 * for analysis.
+	 * 
+	 * @param charArray
+	 *            The filtered String as an array of chars
+	 * @return An array of strings split up in groups of 1-3 letters
+	 */
+	protected final String[] chunkNumbers(final char[] charArray) {
+		final int len = charArray.length;
+		final int arLength = calcLength(len);
+		final String[] outString = new String[arLength];
+		final List<Integer> list = generateIndexes(len);
+		final StringBuilder currentString = new StringBuilder(TranslatorConstants.NUMBER_3);
+		for (int k = 0; k < list.size(); k++) {
+			currentString.delete(0, currentString.length());
+			currentString.ensureCapacity(TranslatorConstants.NUMBER_3);
+			final int index = list.get(k);
+			final int iNext = (k < (list.size() - 1)) ? list.get(k + 1) : len;
+			for (int j = index; ((j < len) && (j < (index + TranslatorConstants.NUMBER_3)) && (j < iNext)); j++) {
+				currentString.append(String.valueOf(charArray[j]));
+			}
+			outString[k] = currentString.toString();
+
+		}
+
+		return outString;
+	}
+
+	/**
+	 * Calculates the length to assign to an array containing modularized
+	 * versions of the input string.
+	 * 
+	 * @param len
+	 *            The length of the input string
+	 * @return The length to assign to the array
+	 */
+	private int calcLength(final int len) {
+		int arLength = len / TranslatorConstants.NUMBER_3;
+		if (len % TranslatorConstants.NUMBER_3 > 0) {
+			arLength += 1;
+		}
+		return arLength;
+	}
+
+	/**
+	 * Generates a list of index points used as marker points within the
+	 * algorithm used to recognise hundreds of numbers.
+	 * 
+	 * @param len
+	 *            The length of the characters in the said number
+	 * @return A list of index points
+	 */
+	private List<Integer> generateIndexes(final int len) {
+		final List<Integer> list = new ArrayList<Integer>();
+		for (int i = len - 1; i >= 0; i--) {
+			if (i % TranslatorConstants.NUMBER_3 == 0) {
+				if (i == 0) {
+					list.add(0, i);
+				} else {
+					list.add(len - i);
+				}
+			}
+		}
+		return list;
+	}
+
+	/**
+	 * Gets the translator associated with this NumberReader
+	 * 
+	 * @return the translator associated with this object.
+	 */
+	public final T getTranslator() {
+		return translator;
+	}
+
+	/**
+	 * Translate the number into a string
+	 * 
+	 * @param number
+	 *            The number to be translated
+	 * @return The translated form of the number.
+	 * @throws NumberReaderException
+	 *             Throw a NumberReaderException if an error occurs
+	 */
+	public abstract String translate(String number) throws NumberReaderException;
+
+	/**
+	 * Trims the output of the string builder by removing unwanted words or
+	 * characters.
+	 * 
+	 * @param sBuilder
+	 *            The StringBuilder which contains the words to trim
+	 * @return A trimmed version of the contents of the string builder
+	 */
+	protected final String trimWords(final StringBuilder sBuilder) {
+		sBuilder.trimToSize();
+		String finalWord = sBuilder.toString().trim();
+		final int wordLength = finalWord.length();
+		final String lastChar = finalWord.substring(wordLength - 1, wordLength);
+		if (lastChar.equals(TranslatorConstants.STRING_COMMA)) {
+			finalWord = finalWord.substring(0, wordLength - 1);
+		}
+
+		return finalWord.replaceAll(TranslatorConstants.COMMA_AND, TranslatorConstants.AND);
+	}
+
+}

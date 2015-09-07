@@ -1,0 +1,13 @@
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/PrimaryNumberBuilder.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/exception/NumberReaderException.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/core/NumberBuilder.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/ChainOfResponsibilityTranslator.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/enums/DistinctNumbers.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/translator/TranslatorConstants.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/messages/Messages.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/translator/NumberFilter.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/enums/GazillionNumbers.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/translator/AbstractNumberReader.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/core/Translator.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/core/AbstractNumberBuilder.java
+/home/rogue/workspace/NumberReader/src/main/java/com/zphinx/reader/english/NumberReader.java

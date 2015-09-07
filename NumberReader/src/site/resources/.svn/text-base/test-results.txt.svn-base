@@ -1,0 +1,85 @@
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.zphinx.reader.english.CORTranslatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec
+
+Running com.zphinx.reader.english.enums.DistinctNumbersTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Running com.zphinx.reader.english.enums.GazzillionNumbersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Running com.zphinx.reader.exception.NumberReaderExceptionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Running com.zphinx.reader.messages.MessageTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Running com.zphinx.reader.english.NumberReaderTest
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Sixty-Nine
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Two Hundred And Sixty
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Nine Thousand, Two Hundred And Seventy-Seven
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Sixty-Seven Thousand, One Hundred And Eighty-Four
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Five Hundred And Eighty-Two Thousand, One Hundred And Fourty-Nine
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Two Million, Two Hundred And Thirty-Nine Thousand, Nine Hundred And Ninety-Seven
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader main
+INFO: Eight Hundred And Fifty-Nine Million, Three Hundred And Fourty-Three Thousand, One Hundred And Sixty-Four
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testTranslateSignedNumberPlus
+INFO: The translation for +3 is: Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testTranslateBigNumber
+INFO: The translation for 35664647474747484943 is: Thirty-Five Quintillion, Six Hundred And Sixty-Four Quadrillion, Six Hundred And Fourty-Seven Trillion, Four Hundred And Seventy-Four Billion, Seven Hundred And Fourty-Seven Million, Four Hundred And Eighty-Four Thousand, Nine Hundred And Fourty-Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testTranslateSignedNumber
+INFO: The translation for -3 is: Minus Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testTranslateLeadingZero
+INFO: The translation for 0000000000000000000000003 is: Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testAnyNumber
+INFO: The translation for 0456219354874843282320003 is: Four Hundred And Fifty-Six Sextillion, Two Hundred And Nineteen Quintillion, Three Hundred And Fifty-Four Quadrillion, Eight Hundred And Seventy-Four Trillion, Eight Hundred And Fourty-Three Billion, Two Hundred And Eighty-Two Million, Three Hundred And Twenty Thousand And Three
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testAnyNumber
+INFO: The translation for 10001 is: Ten Thousand And One
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testAnyNumber
+INFO: The translation for 100001 is: One Hundred Thousand And One
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testAnyNumber
+INFO: The translation for 1000001 is: One Million And One
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReaderTest testAnyNumber
+INFO: The translation for 10000 is: Ten Thousand
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader printToConsole
+SEVERE: Error: com.zphinx.reader.exception.NumberReaderException: java.lang.NumberFormatException: For input string: "@"
+
+Jul 09, 2012 5:15:36 PM com.zphinx.reader.english.NumberReader printToConsole
+SEVERE: Please enter a number!
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
+
+Running com.zphinx.reader.english.PrimaryNumberBuilderTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Results :
+
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0

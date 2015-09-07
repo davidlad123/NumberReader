@@ -1,0 +1,6 @@
+
+    <properties>
+        <author>David Ladapo</author>
+        <title>Number Reader Program</title>
+    </properties>
+    <meta name="keyword" content="Numbers, English Translation Of Numbers, Java"/>

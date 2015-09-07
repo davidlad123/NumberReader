@@ -1,0 +1,40 @@
+10
+
+dir
+204
+https://lion/svn/NumberReader/trunk/src/main/java/com/zphinx/reader
+https://lion/svn
+
+
+
+2012-07-12T18:13:49.314312Z
+204
+rogue
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0e21f2a3-8be6-4a8d-818f-dbc89c4c33a9
+
+core
+dir
+
+english
+dir
+
+exception
+dir
+
+messages
+dir
+

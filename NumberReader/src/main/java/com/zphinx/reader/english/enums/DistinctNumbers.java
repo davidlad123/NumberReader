@@ -1,0 +1,205 @@
+/**
+ * DistinctNumbers.java
+ * @author David Ladapo (davidl@zphinx.com)
+ * @version  1.0
+ * 
+ * Copyright &copy;Zphinx Software Solutions
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  License for more details.
+ *
+ * THERE IS NO WARRANTY FOR THIS SOFTWARE, TO THE EXTENT PERMITTED BY
+ * APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING BY ZPHINX SOFTWARE SOLUTIONS 
+ * AND/OR OTHER PARTIES WHO PROVIDE THIS SOFTWARE "AS IS" WITHOUT WARRANTY
+ * OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+ * IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ * ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+ *
+ * IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+ * WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+ * THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+ * GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+ * USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+ * DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+ * PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+ * EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGES.
+ *
+ * For further information, please go to http://www.zphinx.co.uk/spine/
+ *
+ **/
+
+package com.zphinx.reader.english.enums;
+
+/**
+ * 
+ * <p>
+ * DistinctNumbers is an Enum used to represent some of the numbers zero through
+ * to ninety. It specifies these numbers and their equivalent english
+ * pronounciations or words.
+ * </p>
+ * <p>
+ * The numbers whose translations are kept by distinct numbers reflect specific
+ * verbal points in english based numerical pronunciation.
+ * </p>
+ * 
+ * @author David Ladapo
+ * @version $Id: DistinctNumbers.java 219 2012-07-13 22:03:40Z rogue $
+ * 
+ *          <p>
+ *          Created: Dec 13, 2010 11:22:19 PM<br>
+ *          Copyright &copy;Zphinx Software Solutions
+ *          </p>
+ * 
+ **/
+public enum DistinctNumbers {
+
+	/** The number 0 and its verbal representation */
+	ZERO(0, "Zero"),
+
+	/** The number 1 and its verbal representation */
+	ONE(1, "One"),
+
+	/** The number 2 and its verbal representation */
+	TWO(2, "Two"),
+
+	/** The number 3 and its verbal representation */
+	THREE(3, "Three"),
+
+	/** The number 4 and its verbal representation */
+	FOUR(4, "Four"),
+
+	/** The number 5 and its verbal representation */
+	FIVE(5, "Five"),
+
+	/** The number 6 and its verbal representation */
+	SIX(6, "Six"),
+
+	/** The number 7 and its verbal representation */
+	SEVEN(7, "Seven"),
+
+	/** The number 8 and its verbal representation */
+	EIGHT(8, "Eight"),
+
+	/** The number 9 and its verbal representation */
+	NINE(9, "Nine"),
+
+	/** The number 10 and its verbal representation */
+	TEN(10, "Ten"),
+
+	/** The number 11 and its verbal representation */
+	ELEVEN(11, "Eleven"),
+
+	/** The number 12 and its verbal representation */
+	TWELVE(12, "Twelve"),
+
+	/** The number 13 and its verbal representation */
+	THIRTEEN(13, "Thirteen"),
+
+	/** The number 14 and its verbal representation */
+	FOURTEEN(14, "Fourteen"),
+
+	/** The number 15 and its verbal representation */
+	FIFTEEN(15, "Fifteen"),
+
+	/** The number 16 and its verbal representation */
+	SIXTEEN(16, "Sixteen"),
+
+	/** The number 17 and its verbal representation */
+	SEVENTEEN(17, "Seventeen"),
+
+	/** The number 18 and its verbal representation */
+	EIGHTEEN(18, "Eighteen"),
+
+	/** The number 19 and its verbal representation */
+	NINETEEN(19, "Nineteen"),
+
+	/** The number 20 and its verbal representation */
+	TWENTY(20, "Twenty"),
+
+	/** The number 30 and its verbal representation */
+	THIRTY(30, "Thirty"),
+
+	/** The number 40 and its verbal representation */
+	FOURTY(40, "Fourty"),
+
+	/** The number 50 and its verbal representation */
+	FIFTY(50, "Fifty"),
+
+	/** The number 60 and its verbal representation */
+	SIXTY(60, "Sixty"),
+
+	/** The number 70 and its verbal representation */
+	SEVENTY(70, "Seventy"),
+
+	/** The number 80 and its verbal representation */
+	EIGHTY(80, "Eighty"),
+
+	/** The number 90 and its verbal representation */
+	NINETY(90, "Ninety");
+
+	/**
+	 * The int value of this enum
+	 */
+	private int intValue;
+
+	/**
+	 * The string value of this enum
+	 */
+	private String translation;
+
+	/**
+	 * 
+	 * Private constructor used internally to instantiate this enum type
+	 * 
+	 * @param intValue
+	 *            The int value of this enum
+	 * @param translation
+	 *            The String value of this enum
+	 * 
+	 */
+	private DistinctNumbers(final int intValue, final String translation) {
+		this.intValue = intValue;
+		this.translation = translation;
+	}
+
+	/**
+	 * Gets the int value of this enum
+	 * 
+	 * @return The int value of this enum
+	 */
+	public int getIntValue() {
+		return this.intValue;
+	}
+
+	/**
+	 * Gets the string value of this enum
+	 * 
+	 * @return The string value of this enum
+	 */
+	public String getTranslation() {
+		return translation;
+	}
+
+	/**
+	 * Finds the word representation of this int
+	 * 
+	 * @param num
+	 *            The int whose word value we want
+	 * @return The string value of the int passed to this method
+	 */
+	public static String findWord(final int num) {
+		String out = "";
+		for (DistinctNumbers ztt : values()) {
+			if (num == ztt.getIntValue()) {
+				out = ztt.getTranslation();
+				break;
+			}
+		}
+		return out;
+	}
+
+}
